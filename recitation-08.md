@@ -15,7 +15,13 @@ and then implement a way to visualize the optimal sequence of edits.
   deletions. We will assume that insertions and
   deletions have the same unit cost. State the optimal substructure property
   for this version of the edit distance problem and modify `MED` accordingly. 
+  
+The optimal substructure for only using insertions and deletions is:
+MED(S,T)=
 
+(i)MED(S[1:],T[1:]), if T[0]=S[0]
+
+(ii)1+min{MED(S[1:],T),MED(S,T[1:])}, otherwise
 
 **2)** Now implement `fast_MED`, a memoized version of `MED`. Test your implementation code using `test_MED`.
 
